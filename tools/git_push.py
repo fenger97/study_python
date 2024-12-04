@@ -1,5 +1,6 @@
 from pathlib import Path
 from git import Repo
+from datetime import datetime
 
 def upload_to_git(repo_path, file_path, commit_message, branch="main"):
     """
@@ -42,9 +43,10 @@ def upload_to_git(repo_path, file_path, commit_message, branch="main"):
 
 if __name__ == "__main__":
     # 配置路径和文件
-    repo_path = "/path/to/your/local/git/repo"  # 本地 Git 仓库路径
-    file_path = "/path/to/your/file.txt"       # 要上传的文件路径
-    commit_message = "Add new file"            # 提交消息
+    repo_path = "/home/fenger/share/github/study_python"  # 本地 Git 仓库路径
+    file_path = "/home/fenger/share/github/study_python/tools/output/csv.csv"       # 要上传的文件路径
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    commit_message = "upload file.txt time " + now
 
     # 调用函数
     try:
